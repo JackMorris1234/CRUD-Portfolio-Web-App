@@ -1,4 +1,4 @@
-import '../App.css'
+
 const Button=({text, handleClick})=>{
 
     return(
