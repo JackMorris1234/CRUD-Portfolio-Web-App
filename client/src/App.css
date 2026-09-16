@@ -1,34 +1,48 @@
-
-.OuterHeader{
-  display:grid;
-  grid-template-columns: 1fr auto 1fr; /* 3 columns: Left spacer, Center content, Right button */
-  align-items: center;
-  padding: 0px;
-  margin: 0 auto;
+.OuterHeader {
   background-color: #12544F;
-  border-width: 0svi;
   border: 5px solid #8BBB92;
-  color: #2A835F;
   border-radius: 12px;
-}
-.HeaderButton{
-  height: 100px;
-  width: 100px;
-  background-color: #12544F;
-  justify-self: end;
+  overflow: hidden;
+
   color: #2A835F;
-  border:0px;
-  border-left:5px solid  #8BBB92;
-  padding:5px;
+
+  margin: 0 auto;
+  padding: 0;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: stretch;
 }
 
-.HeaderDropDown{
-  height: 90px;
-  width: 100px;
-  vertical-align: middle;
+.HeaderButton {
+  margin: 0;
+  padding: 5px;
+
   background-color: #12544F;
   color: #2A835F;
-  border:0px;
-  border-right:5px solid  #8BBB92;
-  padding:5px;
+
+  border: 0;
+  border-left: 5px solid #8BBB92;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: end;
+}
+
+.HeaderDropDown {
+  margin: 0;
+  padding: 5px;
+
+  background-color: #12544F;
+  color: #2A835F;
+
+  border: 0;
+  border-right: 5px solid #8BBB92;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  justify-self: start;
 }

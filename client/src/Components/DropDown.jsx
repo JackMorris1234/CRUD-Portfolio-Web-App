@@ -2,9 +2,9 @@ import '../App.css'
 const Dropdown=()=>{
 
     return(
-        <div className='HeaderDropDown'>
-            DropDownHere
-        </div>
+        <h1 className='HeaderDropDown'>
+                DropDownHere
+        </h1>
 
     )
 }

@@ -8,8 +8,7 @@ const Header=()=>{
         <div className="OuterHeader">
             <Dropdown/>
             <h1 >Jack Morris' Resume Portfolio</h1>
-            <Button text='sign in' handleClick={''}/>
-            
+            <Button text='Sign In' handleClick={''}/>
         </div>
     )
 }
