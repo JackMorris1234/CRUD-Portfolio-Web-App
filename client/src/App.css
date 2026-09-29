@@ -46,3 +46,89 @@
 
   justify-self: start;
 }
+
+.ProjectCards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+
+
+.ProjectCard {
+  background-color: #12544F;
+  color: #8BBB92;
+
+  border: 5px solid #8BBB92;
+  border-radius: 12px;
+
+  width: 300px;
+  max-width: 100%;
+  padding: 20px;
+  margin: 15px;
+
+  box-shadow: 5px 5px 0 #0D3D39;
+
+  box-sizing: border-box;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ProjectCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 7px 7px 0 #0D3D39;
+}
+
+.AddProjectIcon {
+  display: block;
+  margin: 20px auto 5px;
+
+  color: #8BBB92;
+  font-size: 3rem;
+
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.ProjectCard:hover .AddProjectIcon {
+  color: #2A835F;
+  transform: scale(1.1);
+}
+
+
+
+.ProjectTitle {
+  margin: 0 0 10px 0;
+  
+  color: #8BBB92;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.ProjectBlurb {
+  margin: 0 0 20px 0;
+
+  color: #FFFFFF;
+  line-height: 1.5;
+}
+
+.ProjectLink {
+  display: inline-block;
+
+  padding: 8px 14px;
+
+  background-color: #8BBB92;
+  color: #12544F;
+
+  border-radius: 6px;
+
+  text-decoration: none;
+  font-weight: bold;
+
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.ProjectLink:hover {
+  background-color: #2A835F;
+  color: #FFFFFF;
+}
