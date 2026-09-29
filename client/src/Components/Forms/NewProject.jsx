@@ -10,6 +10,11 @@ const newProject=()=>{
         git:''
 
     })
+
+    const handleFormChange=(event)=>{
+        const {name,value}=event.target
+        setNewProject((prev)=>({...prev,[name] : value}))
+    }
     return(
         <form>
 
