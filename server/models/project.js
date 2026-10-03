@@ -1,17 +1,6 @@
 const mongoose = require('mongoose')
 mongoose.set('strictQuery', false)
-const url = process.env.DATABASE_URL
 
-console.log('connecting to', url)
-console.log('url is', url)
-mongoose.connect(url, { family: 4 })
-
-  .then(() => {
-    console.log('connected to MongoDB')
-  })
-  .catch(error => {
-    console.log('error connecting to MongoDB:', error.message)
-  })
 
 function validator(val){
   console.log('within validator')
