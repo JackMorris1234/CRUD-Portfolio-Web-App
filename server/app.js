@@ -4,6 +4,8 @@ const config = require('./Utils/config')
 const logger = require('./Utils/logger')
 const middleware = require('./Utils/middleware')
 const notesRouter = require('./Controllers/projects')
+const usersRouter=require('./Controllers/users')
+const loginRouter=require('./Controllers/login')
 require('dotenv').config()
 const app = express()
 
@@ -23,6 +25,8 @@ app.use(express.static('../client/dist'))
 app.use(express.json())
 app.use(middleware.requestLogger)
 app.use('/projects', notesRouter)
+app.use('/users', usersRouter)
+app.use('/login', loginRouter)
 
 app.get('/', (req, res) => {
   res.json({
