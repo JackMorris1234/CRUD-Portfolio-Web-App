@@ -3,28 +3,32 @@ const Project = require('../models/project')
 
 
 
-projectsRouter.get('/', (request, response, next) => {
+projectsRouter.get('/', async (request, response, next) => {
   console.log('getAllProjects called')
-  Project
-    .find({})
-    .then(entries => response.json(entries))
-    .catch(error => next(error))
-
+  try{
+    const projects=await Project.find({})
+    response.json(projects)
+  }catch(error){
+    next(error)
+  }
 })
 
-projectsRouter.get('/:id', (request, response, next) => {
+projectsRouter.get('/:id', async (request, response, next) => {
   console.log('getSingularProject called')
-  const id=request.params.id
-  Project
-    .findById(id)
-    .then((entry) => {
-      entry ? response.json(entry) : response.status(404).end()
-    })
-    .catch(error => next(error))
-
+  try{
+    const id=request.params.id
+    const entry=await Project.findById(id)
+    if(entry){
+      response.json(entry)
+    }else{
+      response.status(404).end()
+    }
+  }catch(error){
+    next(error)
+  }
 })
 
-projectsRouter.post('/',(request, response, next) => {
+projectsRouter.post('/', async (request, response, next) => {
   const body=request.body
 
   if(!body){
@@ -40,10 +44,16 @@ projectsRouter.post('/',(request, response, next) => {
     github:body.git,
     id:body.id
   })
-  project
-    .save()
-    .then(savedProject => response.json(savedProject))
-    .catch(error => next(error))
+  try{
+    const savedProject=project.save()
+    if(savedProject){
+      response.json(savedProject)
+    }else{
+      response.status(500).json({ error : 'something went wrong' })
+    }
+  }catch(error){
+    next(error)
+  }
 })
 
 
