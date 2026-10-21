@@ -1,0 +1,122 @@
+
+.SignInForm {
+  background-color: #12544F;
+  color: #8BBB92;
+
+  border: 5px solid #8BBB92;
+  border-radius: 12px;
+
+  width: 350px;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  padding: 25px;
+  margin: 20px auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  box-shadow: 5px 5px 0 #0D3D39;
+}
+
+.SignInTitle {
+  color: #8BBB92;
+  text-align: center;
+  font-size: 1.7rem;
+  margin: 0 0 5px;
+}
+
+.SignInLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  color: #8BBB92;
+  font-weight: bold;
+}
+
+.SignInInput {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 10px 12px;
+
+  background-color: #0D3D39;
+  color: #FFFFFF;
+
+  border: 2px solid #8BBB92;
+  border-radius: 6px;
+
+  font-size: 1rem;
+
+  transition: border-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.SignInInput:focus {
+  outline: none;
+  border-color: #2A835F;
+  box-shadow: 0 0 0 3px rgba(139, 187, 146, 0.25);
+}
+
+.SignInInput::placeholder {
+  color: #8BBB92;
+  opacity: 0.8;
+}
+
+.SignInActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.SignInSubmit {
+  flex: 1;
+  padding: 10px 14px;
+
+  background-color: #8BBB92;
+  color: #12544F;
+
+  border: 2px solid #8BBB92;
+  border-radius: 6px;
+
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+
+  transition: background-color 0.2s ease,
+              color 0.2s ease,
+              transform 0.2s ease;
+}
+
+.SignInSubmit:hover {
+  background-color: #2A835F;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.SignInSubmit:focus-visible {
+  outline: 3px solid #FFFFFF;
+  outline-offset: 3px;
+}
+
+.SignInCancel {
+  display: flex;
+  flex: 1;
+}
+
+/* Make the existing Cancel button fit its container */
+.SignInCancel button {
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+@media (max-width: 400px) {
+  .SignInForm {
+    padding: 18px;
+    margin: 12px auto;
+  }
+}
