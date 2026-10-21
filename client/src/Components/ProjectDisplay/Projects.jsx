@@ -1,8 +1,8 @@
 import { useEffect,useState } from "react"
-import FrontToBack from "./BackendCommunication/ProjectsBackend"
+import FrontToBack from "../BackendCommunication/ProjectsBackend"
 import ProjectCard from './ProjectCard'
 import {FiPlus} from 'react-icons/fi'
-const Projects=()=>{
+const Projects=({user})=>{
     const [projects, setProjects]=useState([])
     const [displayProjects, setDisplayProjects]=useState(true)
 
@@ -28,12 +28,14 @@ const Projects=()=>{
         return(
             <div className="ProjectCards">
             {projects.map(project=>
-            <ProjectCard project={project}/>     
-            )} 
+            <ProjectCard project={project} user={user}/>     
+            )}
+            {user && 
             <button onClick={handleAddProject} className="ProjectCard">
                 <h1 className="ProjectTitle">Add Project</h1>
                 <FiPlus className="AddProjectIcon" />
             </button>
+            }
         </div>
         )
     }else{

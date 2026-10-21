@@ -1,5 +1,5 @@
 
-const ProjectCard=({project})=>{
+const ProjectCard=({project, user})=>{
 
     const handleClick=()=>{
         
@@ -11,7 +11,8 @@ const ProjectCard=({project})=>{
                 <h1 className="ProjectTitle">{project.Title}</h1>
                 <p className="ProjectBlurb">{project.card_blurb}</p>
                 <a className="ProjectLink" href={project.github}> Github Link</a>
-                <button onClick={handleClick}>Edit</button>
+                {user &&
+                <button onClick={handleClick}>Edit</button>}
         </div>
         
     )

@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import Header from './Components/Header'
+import Header from './Components/Header/Header'
 import './App.css'
 import Carousel from './Components/Carousel'
-import Projects from './Components/Projects'
+import Projects from './Components/ProjectDisplay/Projects'
 import projectService from './Components/BackendCommunication/ProjectsBackend'
 import SignIn from './Components/SignIn'
 
@@ -16,10 +16,13 @@ function App() {
 
   useEffect(() => {
     const loggedUserJSON = window.localStorage.getItem('ProjectUser')
+    console.log('retreiving saved user, ', loggedUserJSON)
     if (loggedUserJSON) {
-      const user = JSON.parse(loggedUserJSON)
-      setUser(user)
-      projectService.setToken(user.token)
+      const savedUser = JSON.parse(loggedUserJSON)
+  
+      setUser(savedUser)
+
+      projectService.setToken(savedUser.token)
     }
   }, [])
 

@@ -24,7 +24,7 @@ mongoose
 app.use(express.static('../client/dist'))
 app.use(express.json())
 app.use(middleware.requestLogger)
-app.use('/projects', notesRouter)
+app.use('/projects', middleware.tokenExtractor, notesRouter)
 app.use('/users', usersRouter)
 app.use('/login', loginRouter)
 
