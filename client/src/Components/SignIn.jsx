@@ -18,6 +18,8 @@ const SignIn=({toggleSignIn, setUser})=>{
             projectService.setToken(user.token)
             setUsername('')
             setPassword('')
+            console.log('user is: ', user)
+            toggleSignIn()
         }catch(error){
             console.log('sign in component error', error)
         }

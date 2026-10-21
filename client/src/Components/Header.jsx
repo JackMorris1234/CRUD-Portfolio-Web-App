@@ -9,13 +9,18 @@ const Header=({user, setUser})=>{
     const toggleSignIn=()=>{
         setVisibleSignIn(!visibleSignIn)
     }
+    const handleSignOut=()=>{
+        setUser(null)
+        window.localStorage.removeItem('ProjectUser')
+    }
 
 
     return(
         <div className="OuterHeader">
             <Dropdown/>
             <h1 >Jack Morris' Resume Portfolio</h1>
-            <Button text='Sign In' handleClick={toggleSignIn}/>
+            {!user && <Button text='Sign In' handleClick={toggleSignIn}/>}
+            {user && <Button text='Log Out' handleClick={handleSignOut}/>}
             {visibleSignIn && <SignIn toggleSignIn={toggleSignIn} setUser={setUser}/>}
         </div>
     )
