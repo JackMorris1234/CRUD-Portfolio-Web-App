@@ -1,5 +1,6 @@
 const projectsRouter = require('express').Router()
 const Project = require('../models/project')
+const jwt=require('jsonwebtoken')
 
 
 
@@ -31,6 +32,10 @@ projectsRouter.get('/:id', async (request, response, next) => {
 projectsRouter.post('/', async (request, response, next) => {
   const body=request.body
 
+  const decodedToken = jwt.verify(request.token, process.env.SECRET)
+  if (!decodedToken.id) {
+    return response.status(401).json({ error: 'token invalid' })
+  }
   if(!body){
     return response.status(400).json({ error: 'content missing' })
   }
