@@ -5,6 +5,7 @@ import Carousel from './Components/Carousel'
 import Projects from './Components/ProjectDisplay/Projects'
 import projectService from './Components/BackendCommunication/ProjectsBackend'
 import SignIn from './Components/SignIn'
+import Intro from './Components/Intro/Intro'
 
 function App() {
   const [user, setUser]=useState(null)
@@ -31,6 +32,7 @@ function App() {
     <div>
       <Header user={user} setUser={setUser} toggleSignIn={toggleSignIn} className="Header"/>
       {visibleSignIn && <SignIn toggleSignIn={toggleSignIn} setUser={setUser}/>}
+      <Intro/>
       <Carousel/>
       <Projects user={user}/>
       
