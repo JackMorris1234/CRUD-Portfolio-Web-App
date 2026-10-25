@@ -3,10 +3,10 @@ const Education=()=>{
     return(
         <div>
             <h2>Education</h2>
-            <p1>Computer science graduate of WPI 2026 with a minor in Data Science</p1><br></br>
-            <p1>Considering a return for my master's degree in the current job market</p1>
-          
-
+            <ul>
+                <li>WPI 2026 Computer Science Bachelors with a minor in Data Science</li>
+                <li>Boston College Highschool Alumni</li>
+            </ul>
         </div>
     )
 

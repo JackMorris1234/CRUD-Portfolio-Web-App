@@ -26,7 +26,10 @@ const Projects=({user})=>{
     }
     if(displayProjects){
         return(
-            <div className="ProjectCards">
+    <section className="AboutSection">
+        <h1 className="AboutHeader">Projects</h1>
+
+        <div className="ProjectCards">
             {projects.map(project=>
             <ProjectCard project={project} user={user}/>     
             )}
@@ -37,6 +40,7 @@ const Projects=({user})=>{
             </button>
             }
         </div>
+    </section>
         )
     }else{
 

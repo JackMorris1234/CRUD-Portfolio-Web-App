@@ -1,6 +1,8 @@
 
 import CharacterIntro from './CharacterIntro'
 import Education from './Education'
+import Experience from './Experience'
+import Interests from './Interests'
 import '../../App.css'
 
 const Intro = () => {
@@ -15,6 +17,12 @@ const Intro = () => {
 
                 <div className="IntroCard">
                     <CharacterIntro />
+                </div>
+                <div className="IntroCard">
+                    <Experience />
+                </div>
+                <div className="IntroCard">
+                    <Interests />
                 </div>
             </div>
         </section>

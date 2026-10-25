@@ -3,10 +3,11 @@ const CharacterIntro=()=>{
     return(
         <div>
             <h2>Personal</h2>
-            <p1>An avid reader</p1><br></br>
-            <p2>A good night of videogames with my friends relaxes me</p2><br></br>
-            <p3>I love both waterskiing and snowskiing</p3><br></br>
-
+            <ul>
+                <li>I am a recent graduate looking for a position in which I can grow as a Software Engineer</li>
+                <li>A good night of videogames with my friends relaxes me</li>
+                <li>I love both waterskiing and snowskiing</li>
+            </ul>
         </div>
     )
 }
