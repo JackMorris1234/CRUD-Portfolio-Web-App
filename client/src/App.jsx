@@ -1,43 +1,23 @@
-import { useState, useEffect } from 'react'
-import Header from './Components/Header/Header'
-import './App.css'
-import Carousel from './Components/Carousel'
-import Projects from './Components/ProjectDisplay/Projects'
-import projectService from './Components/BackendCommunication/ProjectsBackend'
-import SignIn from './Components/SignIn'
-import Intro from './Components/Intro/Intro'
+import { useState } from 'react'
+import MainPage from './MainPage'
+import EditProject from './Components/Forms/EditProject'
+import NewProject from './Components/Forms/NewProject'
+import {
+  BrowserRouter as Router,
+  Routes, Route, Link
+} from 'react-router-dom'
 
 function App() {
   const [user, setUser]=useState(null)
-  const [visibleSignIn, setVisibleSignIn]=useState(false)
-  
-  const toggleSignIn=()=>{
-    setVisibleSignIn(!visibleSignIn)
-  }
 
-  useEffect(() => {
-    const loggedUserJSON = window.localStorage.getItem('ProjectUser')
-    console.log('retreiving saved user, ', loggedUserJSON)
-    if (loggedUserJSON) {
-      const savedUser = JSON.parse(loggedUserJSON)
-  
-      setUser(savedUser)
-
-      projectService.setToken(savedUser.token)
-    }
-  }, [])
 
   return (
-    <>
-    <div>
-      <Header user={user} setUser={setUser} toggleSignIn={toggleSignIn} className="Header"/>
-      {visibleSignIn && <SignIn toggleSignIn={toggleSignIn} setUser={setUser}/>}
-      <Intro/>
-      <Carousel/>
-      <Projects user={user}/>
-      
-    </div>
-    </>
+    <Router>
+      <Routes>
+        <Route path='/' element=
+
+      </Routes>
+    </Router>
   )
 }
 
