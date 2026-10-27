@@ -2,8 +2,9 @@ import { useEffect,useState } from "react"
 import FrontToBack from "../BackendCommunication/ProjectsBackend"
 import ProjectCard from './ProjectCard'
 import {FiPlus} from 'react-icons/fi'
-const Projects=({user})=>{
-    const [projects, setProjects]=useState([])
+import { Link } from 'react-router-dom'
+const Projects=({user, projects, setProjects})=>{
+   
     const [displayProjects, setDisplayProjects]=useState(true)
 
     useEffect(()=>{
@@ -24,6 +25,7 @@ const Projects=({user})=>{
     const handleBack=()=>{
         setDisplayProjects(true)
     }
+    console.log('here1', projects)
     if(displayProjects){
         return(
     <section className="AboutSection">
@@ -34,10 +36,11 @@ const Projects=({user})=>{
             <ProjectCard project={project} user={user}/>     
             )}
             {user && 
-            <button onClick={handleAddProject} className="ProjectCard">
+            <Link to='/NewProject' className="ProjectCard">
                 <h1 className="ProjectTitle">Add Project</h1>
                 <FiPlus className="AddProjectIcon" />
-            </button>
+            </Link>
+            
             }
         </div>
     </section>

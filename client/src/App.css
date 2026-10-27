@@ -225,3 +225,146 @@
     padding: 15px;
   }
 }
+
+/* Overall project detail page */
+.ProjectDetail {
+  width: 100%;
+  max-width: 1000px;
+  margin: 35px auto;
+  padding: 25px;
+
+  box-sizing: border-box;
+
+  background-color: transparent;
+  color: #8BBB92;
+
+  border: 3px solid #8BBB92;
+  border-radius: 18px;
+
+  box-shadow: 6px 6px 0 #0D3D39;
+}
+
+/* Main project heading */
+.ProjectDetailHeader {
+  padding: 30px 20px;
+  margin-bottom: 25px;
+
+  background-color: #12544F;
+  border: 3px solid #8BBB92;
+  border-radius: 12px;
+
+  text-align: center;
+}
+
+.ProjectDetailTitle {
+  margin: 0 0 15px;
+
+  color: #8BBB92;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.2;
+
+  overflow-wrap: anywhere;
+}
+
+.ProjectDetailBlurb {
+  max-width: 700px;
+  margin: 0 auto;
+
+  color: #FFFFFF;
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+/* Main project description */
+.ProjectDetailBody {
+  padding: 10px 5px 25px;
+}
+
+.ProjectDetailBody h2,
+.ProjectDetailCard h2 {
+  margin: 0 0 15px;
+
+  color: #8BBB92;
+  font-size: 1.5rem;
+
+  padding-bottom: 10px;
+  border-bottom: 2px solid #0D3D39;
+}
+
+.ProjectDetailText,
+.ProjectDetailCard p {
+  margin: 0;
+
+  color: #FFFFFF;
+  font-size: 1rem;
+  line-height: 1.8;
+
+  overflow-wrap: anywhere;
+}
+
+/* Goal and outcomes cards */
+.ProjectDetailContent {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+
+  align-items: stretch;
+  margin: 10px 0 30px;
+}
+
+.ProjectDetailCard {
+  min-width: 0;
+  padding: 22px;
+
+  box-sizing: border-box;
+
+  background-color: #12544F;
+  color: #FFFFFF;
+
+  border: 3px solid #8BBB92;
+  border-radius: 12px;
+
+  box-shadow: 4px 4px 0 #0D3D39;
+
+  transition: transform 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.ProjectDetailCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 6px 6px 0 #0D3D39;
+}
+
+/* GitHub link */
+.ProjectDetailFooter {
+  display: flex;
+  justify-content: center;
+
+  padding-top: 10px;
+}
+
+/* Responsive layout */
+@media (max-width: 650px) {
+  .ProjectDetail {
+    width: calc(100% - 24px);
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  .ProjectDetailHeader {
+    padding: 25px 12px;
+  }
+
+  .ProjectDetailContent {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .ProjectDetailCard {
+    padding: 18px;
+  }
+
+  .ProjectDetailBody {
+    padding-bottom: 20px;
+  }
+}

@@ -8,7 +8,7 @@ import SignIn from './Components/SignIn'
 import Intro from './Components/Intro/Intro'
 import Skills from './Components/Skills/Skills'
 
-function MainPage({user, setUser}) {
+function MainPage({user, setUser, projects, setProjects}) {
   
   const [visibleSignIn, setVisibleSignIn]=useState(false)
   
@@ -35,7 +35,7 @@ function MainPage({user, setUser}) {
       {visibleSignIn && <SignIn toggleSignIn={toggleSignIn} setUser={setUser}/>}
       <Intro/>
       <Carousel/>
-      <Projects user={user}/>
+      <Projects user={user} projects={projects} setProjects={setProjects}/>
       <Skills/>
       
     </div>

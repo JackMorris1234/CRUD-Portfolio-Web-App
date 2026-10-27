@@ -1,0 +1,205 @@
+
+/* Main project creation panel */
+.NewProject {
+  width: 100%;
+  max-width: 850px;
+  margin: 35px auto;
+  padding: 30px;
+
+  box-sizing: border-box;
+
+  background-color: #12544F;
+  color: #8BBB92;
+
+  border: 4px solid #8BBB92;
+  border-radius: 18px;
+
+  box-shadow: 6px 6px 0 #0D3D39;
+}
+
+/* Heading */
+.NewProjectHeader {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+
+  text-align: center;
+
+  border-bottom: 2px solid #0D3D39;
+}
+
+.NewProjectTitle {
+  margin: 0 0 10px;
+
+  color: #8BBB92;
+  font-size: clamp(2rem, 5vw, 2.6rem);
+}
+
+.NewProjectHeader p {
+  margin: 0;
+
+  color: #FFFFFF;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Form layout */
+.NewProjectForm {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Individual fields */
+.NewProjectField {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.NewProjectField label {
+  color: #8BBB92;
+  font-size: 1.05rem;
+  font-weight: bold;
+}
+
+/* Inputs and text areas */
+.NewProjectField input,
+.NewProjectField textarea {
+  width: 100%;
+  padding: 12px 14px;
+
+  box-sizing: border-box;
+
+  background-color: #0D3D39;
+  color: #FFFFFF;
+
+  border: 2px solid #8BBB92;
+  border-radius: 8px;
+
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1.6;
+
+  transition: border-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.NewProjectField textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+/* Placeholder text */
+.NewProjectField input::placeholder,
+.NewProjectField textarea::placeholder {
+  color: #B7D2BB;
+  opacity: 0.8;
+}
+
+/* Focus state */
+.NewProjectField input:focus,
+.NewProjectField textarea:focus {
+  outline: none;
+
+  border-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(139, 187, 146, 0.3);
+}
+
+/* Submit and cancel actions */
+.NewProjectActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+
+  margin-top: 10px;
+  padding-top: 22px;
+
+  border-top: 2px solid #0D3D39;
+}
+
+/* Create button */
+.NewProjectSubmit {
+  padding: 12px 24px;
+
+  background-color: #8BBB92;
+  color: #12544F;
+
+  border: 2px solid #8BBB92;
+  border-radius: 8px;
+
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+
+  transition: background-color 0.2s ease,
+              color 0.2s ease,
+              transform 0.2s ease;
+}
+
+.NewProjectSubmit:hover {
+  background-color: #2A835F;
+  color: #FFFFFF;
+
+  transform: translateY(-2px);
+}
+
+/* Cancel link */
+.NewProjectCancel {
+  display: inline-block;
+  padding: 12px 24px;
+
+  background-color: transparent;
+  color: #8BBB92;
+
+  border: 2px solid #8BBB92;
+  border-radius: 8px;
+
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+
+  transition: background-color 0.2s ease,
+              color 0.2s ease;
+}
+
+.NewProjectCancel:hover {
+  background-color: #8BBB92;
+  color: #12544F;
+}
+
+/* Keyboard accessibility */
+.NewProjectSubmit:focus-visible,
+.NewProjectCancel:focus-visible {
+  outline: 3px solid #FFFFFF;
+  outline-offset: 4px;
+}
+
+/* Responsive layout */
+@media (max-width: 650px) {
+  .NewProject {
+    width: calc(100% - 24px);
+    margin: 20px auto;
+    padding: 18px;
+  }
+
+  .NewProjectHeader {
+    margin-bottom: 22px;
+  }
+
+  .NewProjectForm {
+    gap: 18px;
+  }
+
+  .NewProjectActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .NewProjectSubmit,
+  .NewProjectCancel {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

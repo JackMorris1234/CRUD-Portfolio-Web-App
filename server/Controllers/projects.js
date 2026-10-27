@@ -29,11 +29,24 @@ projectsRouter.get('/:id', async (request, response, next) => {
   }
 })
 
+projectsRouter.delete('/:id', async (request, response, next) => {
+  if(!request.user){
+    response.status(401).json({ error:'invalid token' })
+  }else{
+    const id=request.params.id
+    try{
+      const result=await Project.findByIdAndDelete(id)
+      response.status(204).json(result)
+    }catch(error){
+      next(error)
+    }
+  }
+})
+
 projectsRouter.post('/', async (request, response, next) => {
   const body=request.body
 
   const decodedToken = jwt.verify(request.token, process.env.SECRET)
-  console.log('id', decodedToken.id)
   if (!decodedToken.id) {
     return response.status(401).json({ error: 'token invalid' })
   }
@@ -59,6 +72,26 @@ projectsRouter.post('/', async (request, response, next) => {
     }
   }catch(error){
     next(error)
+  }
+})
+
+projectsRouter.put('/:id', async(request, response, next) => {
+  const body=request.body
+  const id=request.params.id
+  if(!request.user){
+    response.status(401).json({ error:'invalid token' })
+  }else{
+
+    try{
+      const result = await Project.findByIdAndUpdate(
+        id,
+        { $set: body },
+        { new: true, runValidators: true }
+      )
+      response.status(200).json(result)
+    }catch(error){
+      next(error)
+    }
   }
 })
 
